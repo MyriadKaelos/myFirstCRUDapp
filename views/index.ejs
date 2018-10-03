@@ -1,0 +1,43 @@
+<html>
+  <body>
+    <div>
+      <h3>You: <%= user[0].uName %></h3>
+    </div>
+    <table style='position:absolute;right:30px;border:1px solid black'>
+      <tr><td><h3>Users</h3></td></tr>
+      <% for(var i = 0; i <users.length; i++) { %>
+        <tr>
+          <td><%= users[i].uName %></td>
+        </tr>
+      <% } %>
+    </table>
+    <div style='border:solid 1px black;padding:10px;width:25%'>
+      <form action='/api/massDelete' method='POST' autocomplete="off">
+        <p><b>Mass Delete</b>  all Posts<br>Gotta be done sometimes<br>Don't worry about it</p>
+        <input type='submit' name='submit'/>
+      </form>
+    </div>
+    <div>
+      Posts
+      <div>
+        <table style='border:solid 1px black;overflow-y:scroll;height:200px;display:block;width:50%'>
+          <% for(var i = 0; i<posts.length;i++) { %>
+            <% var d = new Date(); %>
+            <tr>
+              <td style='border:solid 1px black;padding:3px 10px'><%= posts[i].data %></td>
+              <td style='border:solid 1px black;padding:1px 2px'><%= "User: " + posts[i].user.uName %></td>
+              <td style='border:solid 1px black;padding:1px'><%= "Seconds Ago: " + Math.floor((d.getTime() - posts[i].timeStamp)/1000) %></td>
+            </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>
+    <div style='border: solid 1px black;width: 50%'>
+      New Post
+      <form action='/api/newPost' method='POST' autocomplete="off">
+        <input type='text' name='data' style='width:79%'/>
+        <input type='submit' name='submit' style='width:19%'/>
+      </form>
+    </div>
+  </body>
+</html>

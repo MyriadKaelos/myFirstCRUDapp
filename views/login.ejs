@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <p><%= error %></p>
+    <div style='border:solid black 1px;width: 20%;'>
+      Sign Up
+      <form action='/api/newUser' method='POST' autocomplete="off">
+        <input type='text' name='uName'/>
+        <input type='password' name='pName'/>
+        <input type='submit' name='submit'/>
+      </form>
+    </div>
+    <div style='border:solid black 1px;width: 20%;'>
+      Sign in
+      <form action='/api/login' method='POST' autocomplete="off">
+        <input type='text' name='uName'/>
+        <input type='password' name='pName'/>
+        <input type='submit' name='submit'/>
+      </form>
+    </div>
+  </body>
+</html>
