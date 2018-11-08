@@ -75,7 +75,7 @@ var db
 MongoClient.connect('mongodb://yateslough:Yateslough1@ds111113.mlab.com:11113/tester', {useNewUrlParser: true}, (err, client) => {
   if (err) {console.log(err)}
   db = client.db('tester');  //sets database var equal to global db var above
-  app.listen(3000, () => {
-    console.log('listening on 3000');
+  app.listen(process.env.PORT || 5000 () => {
+    console.log('listening on 5000');
   });
 });
