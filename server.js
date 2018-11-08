@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
   res.render('login.ejs', {error: ""});
 });
 // all of our routes will be prefixed with /api
-app.use('/api', router);
+app.use('/', router);
 //ADD A NEW USER
 app.post('/api/newUser', function (req, res) {
   var uName = req.body.uName;
